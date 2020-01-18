@@ -36,7 +36,7 @@ class Controller:
         print(f"Simulation Start Time: {current_time}\n\nMoving Asteroids!\n-----------------")
 
         # loops for each second
-        for y in range(1, seconds + 1):
+        for y in range(1, seconds - 1):
             self.perfect_second()
 
             # loops through each asteroid
