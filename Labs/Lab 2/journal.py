@@ -1,10 +1,12 @@
-""" This module holds DVD"""
+""" This module holds Journal"""
 from items import Items
-import difflib
 
 
 class Journal(Items):
-
+    """
+    Represents a single Journal in a library which is identified through
+    it's call number.
+    """
     def __init__(self, call_num, title, num_copies, names, number, publisher):
         super().__init__(call_num, title, num_copies)
         self._names = names

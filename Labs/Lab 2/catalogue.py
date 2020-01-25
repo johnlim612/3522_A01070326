@@ -4,6 +4,10 @@ import difflib
 
 
 class Catalogue:
+    """
+    Represents a catalogue in a library used to search, add, remove items. Holds
+    a list of all items.
+    """
 
     def __init__(self, item_list):
         """

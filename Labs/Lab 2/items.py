@@ -1,10 +1,13 @@
-""" Item constructor"""
-import difflib
+
 from abc import ABC
+"""
+    Represents a single item in a library which is identified through
+    it's call number.
+    """
 
 
 class Items(ABC):
-
+    """ Item constructor"""
     def __init__(self, call_num, title, num_copies):
         self._call_num = call_num
         self._title = title

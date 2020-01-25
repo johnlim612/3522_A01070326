@@ -1,9 +1,12 @@
 """ This module holds DVD"""
 from items import Items
-import difflib
 
 
 class DVD(Items):
+    """
+    Represents a DVD in a library which is identified through
+    it's call number.
+    """
 
     def __init__(self, call_num, title, num_copies, release_date, code):
         super().__init__(call_num, title, num_copies)

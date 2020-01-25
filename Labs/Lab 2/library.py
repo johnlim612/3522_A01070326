@@ -7,7 +7,7 @@ class Library:
 
     """
     The Library consists of a list of items and provides an
-    interface for users to check out, return and find items.
+    interface for users to check out and return items.
     """
     def __init__(self, item_list):
         self._item_list = item_list
