@@ -30,7 +30,7 @@ def main():
         definition = dictionary.query_definition(word)
         print(definition)
         text = "" + word + ": " + str(definition)
-        dictionary.fileHandler.write_lines("empty.txt", text)
+        dictionary.fileHandler.write_lines("searchLog.txt", text)
 
 
 if __name__ == '__main__':

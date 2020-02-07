@@ -13,3 +13,8 @@ bad: ['Not good; unfavorable; negative.', "A mistake, an oversight, a slight; us
 hunk: This word does not exist in the dictionary
 dunk: This word does not exist in the dictionary
 punk: ['Of very poor quality.']
+4fsd: This word does not exist in the dictionary
+dfs: This word does not exist in the dictionary
+fd: This word does not exist in the dictionary
+fi: This word does not exist in the dictionary
+hi: ['Expression of greeting used by two or more people who meet each other.']
