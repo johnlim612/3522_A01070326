@@ -10,7 +10,6 @@ class UserMenu:
 
     def run_menu(self):
         print("welcome to the user menu")
-        menu = UserMenu()
         self.user_collection.record_transaction()
 
 

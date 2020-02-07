@@ -1,0 +1,15 @@
+67: This word does not exist in the dictionary
+67896789: This word does not exist in the dictionary
+432: This word does not exist in the dictionary
+423: This word does not exist in the dictionary
+23154: This word does not exist in the dictionary
+gdfgs: This word does not exist in the dictionary
+hi: ['Expression of greeting used by two or more people who meet each other.']
+Pap: This word does not exist in the dictionary
+pop: ['A beverage that has had carbon dioxide dissolved into it.']
+popopopopop: This word does not exist in the dictionary
+dab: This word does not exist in the dictionary
+bad: ['Not good; unfavorable; negative.', "A mistake, an oversight, a slight; usually apologetic, referring to one's own failures.", 'Having changed its colour, smell or composition (partially or completely), due to being attacked and decomposed by microorganisms (relating to organic matter); damaged by decay.', 'With great intensity.', 'Characterized by wickedness or immorality.']
+hunk: This word does not exist in the dictionary
+dunk: This word does not exist in the dictionary
+punk: ['Of very poor quality.']
