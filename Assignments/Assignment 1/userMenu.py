@@ -1,19 +1,36 @@
 """ User menu"""
-from userCollection import UserCollection
+from userHandler import UserCollection
+from user import User
 
 
 class UserMenu:
-    user_collection = UserCollection
 
     def __init__(self):
-        self.run_menu()
+        self._user_handler = UserCollection()
 
-    def run_menu(self):
-        print("welcome to the user menu")
-        self.user_collection.record_transaction()
+    def start(self):
+        self._user_handler.register_child()
+        user = self._user_handler.user_list[-1]
+        a = True
+        print("Showing user menu for child...")
+        choice = 0
+        while a:
+            choice = input(int("What would you like to do?"
+                               "\n1- View Budgets"
+                               "\n2- Record a Transaction"
+                               "\n3- View Transactions By Budget"
+                               "\n4- View Bank Account Details"))
 
-
-
+        if choice == 1:
+            user.view_budget()
+        elif choice == 2:
+            user.add_transaction_record()
+        elif choice == 3:
+            user.get_transaction_record()
+        elif choice == 4:
+            user.view_bank_details()
+        else:
+            print("Please enter a valid option")
 
 
 

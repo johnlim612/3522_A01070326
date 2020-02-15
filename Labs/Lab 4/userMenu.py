@@ -1,5 +1,5 @@
 """ User menu"""
-from userCollection import UserCollection
+from userHandler import UserCollection
 
 
 class UserMenu:
