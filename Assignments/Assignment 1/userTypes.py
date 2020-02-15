@@ -1,24 +1,27 @@
+from userTypeEnum import UserType
+
+
 class UserTypes:
     def __init__(self, user_type):
-        self._lockout_limit = self.lockout_limit()
-        self._warning_limit = self.warning_limit()
+        self._lockout_limit = self.lockout_limit(user_type)
+        self._warning_limit = self.warning_limit(user_type)
         self._user_type = user_type
         self._warned = 0
 
-    def lockout_limit(self):
-        if self._user_type == 1:
+    def lockout_limit(self, user_type):
+        if user_type == UserType.Angel:
             return 'inf'
-        if self._user_type == 2:
+        if user_type == UserType.TroubleMaker:
             return 1.20
-        if self._user_type == 3:
+        if user_type == UserType.Rebel:
             return 1.00
 
-    def warning_limit(self):
-        if self._user_type == 1:
+    def warning_limit(self, user_type):
+        if user_type == UserType.Angel:
             return 0.90
-        if self._user_type == 2:
+        if user_type == UserType.TroubleMaker:
             return 0.75
-        if self._user_type == 3:
+        if user_type == UserType.Rebel:
             return 0.50
 
     def notify_user(self):
@@ -33,6 +36,8 @@ class UserTypes:
         if self._user_type == 3:
             print(f"YOU HAVE EXCEEDED {warning_percentage}% ON THIS CATEGORY")
 
+    def get_lockout_limit(self):
+        return self._lockout_limit
 
-
-
+    def get_warning_limit(self):
+        return self._warning_limit

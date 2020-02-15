@@ -12,5 +12,7 @@ class TransactionRecords:
     def print_record(self):
         for x in self._record_list:
             print(x)
-            for y in self._record_list[x]:
-                print(y, ':', self._record_list[x][y])
+        # for x in self._record_list:
+        #     print(x)
+        #     for y in self._record_list[x]:
+        #         print(y, ':', self._record_list[x][y])

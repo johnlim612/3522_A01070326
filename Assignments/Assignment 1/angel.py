@@ -6,8 +6,3 @@ class Angel(User):
         super().__init__()
         self._warning_limit = 0.90
         self._lockout_limit = float('inf')
-
-
-
-
-

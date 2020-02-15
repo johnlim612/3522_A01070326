@@ -9,4 +9,3 @@ class Rebel(User):
 
     def full_lockout(self):
         pass
-

@@ -3,6 +3,7 @@ from budget import Budget
 from transactionRecords import TransactionRecords
 from userTypes import UserTypes
 
+
 # from enum import Enum
 #
 # class userType(Enum):
@@ -25,7 +26,7 @@ class User:
         self._user_types = UserTypes(user_type)
 
         self._transaction_records = TransactionRecords()
-        self._budgets = Budget(budgets, self._user_types.warning_limit(), self._user_types.warning_limit())
+        self._budgets = Budget(budgets, self._user_types.get_lockout_limit(), self._user_types.get_warning_limit())
 
     def add_transaction_record(self, time, amount, budget_cat, name):
         self._transaction_records.add_record(time, amount, budget_cat, name)
@@ -63,5 +64,3 @@ class User:
         print(f"Bank account Number: {self._bank_account_number}\n"
               f"Bank name: {self._bank_name}\n"
               f"Bank bal: {self._bank_bal}")
-
-

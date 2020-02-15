@@ -7,6 +7,7 @@ class Budget:
         self._budgets = budgets
         self._current_budgets = budgets
         self._warning_limit = warning_limit
+        print(f"{warning_limit} check1")
         self._lockout_limit = lockout_limit
         self._locked = {"games and entertainment": False,
                         "clothing and accessories": False,
@@ -54,6 +55,7 @@ class Budget:
     def check_warning(self, budget_cat):
         # percentage of budget used
         used_percentage = (self._budgets[budget_cat] - self._current_budgets[budget_cat]) / self._budgets[budget_cat]
+        print(self._warning_limit)
         if used_percentage > self._warning_limit:
             return True
         return False

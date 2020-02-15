@@ -7,20 +7,11 @@ from user import User
 class UserCollection:
     user_list = []
 
-
     def add_user(self, user):
         self.user_list.append(user)
 
-    # @staticmethod
-    # def load_test_user():
-    #     budget = Budget(200, 300, 250, 100)
-    #     # Dummy troublemaker user type values
-    #     user = User()
-    #     return user
-
-    @staticmethod
     def record_transaction(self, user):
-        amount = input("Please enter you transaction amount")
+        amount = int(input("Please enter your transaction amount"))
 
         time = datetime.datetime.now().time()
         name = user.get_name()
@@ -40,13 +31,13 @@ class UserCollection:
         else:
             budget_cat = "none"
 
-        users_budget = user.get_budget
+        users_budget = user.get_budget()
 
         if user.get_bank_bal() - amount < 0:
             print("You dont't have enough money in the bank")
             return
         # adds transaction record after checking it is not locked
-        budget_lock = user.get_budget.get_locked()
+        budget_lock = user.get_budget().get_locked()
         user.warn_user(budget_cat)
         user.notify_user(budget_cat)
 
@@ -68,10 +59,10 @@ class UserCollection:
         misc = 0
         print("Please register your child")
         name = input("What is their name?")
-        age = input("Enter age")
+        age = int(input("Enter age"))
         bank_account_num = input("Enter bank account number")
         bank_name = input("Enter bank name")
-        bank_bal = input("Enter bank balance")
+        bank_bal = float(input("Enter bank balance"))
 
         while not registered_budget:
             try:
@@ -92,7 +83,7 @@ class UserCollection:
                          "miscellaneous": misc}
 
         user_type = 0
-        while user_type not in (1, 2, 3):
+        while user_type not in (UserType.Angel, UserType.TroubleMaker, UserType.Rebel):
             user_type = int(input("Enter the user type:"
                                   "\n1- Angel"
                                   "\n2- Troublemaker"
@@ -108,5 +99,3 @@ class UserCollection:
 
         user = User(name, age, bank_account_num, bank_name, bank_bal, input_budgets, user_type)
         self.add_user(user)
-
-

@@ -6,4 +6,3 @@ class TroubleMaker(User):
         super().__init__()
         self._warning_limit = 0.75
         self._lockout_limit = 1.20
-
