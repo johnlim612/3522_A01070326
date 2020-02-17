@@ -3,10 +3,9 @@ from budget import Budget
 from transactionRecords import TransactionRecords
 from userTypes import UserTypes
 
-
-# from enum import Enum
-#
-# class userType(Enum):
+"""
+Represents each child using the program
+"""
 
 
 class User:
@@ -34,11 +33,15 @@ class User:
     def get_transaction_record(self):
         return self._transaction_records
 
+    def print_all_transactions(self):
+        self._transaction_records.print_all_records()
+
     def notify_user(self, budget_cat):
         if self._budgets.check_notify(budget_cat):
             self._user_types.notify_user()
 
     def warn_user(self, budget_cat):
+
         if self._budgets.check_warning(budget_cat):
             self._user_types.notify_user()
 
@@ -61,6 +64,6 @@ class User:
         self._budgets.view_budget()
 
     def view_bank_details(self):
-        print(f"Bank account Number: {self._bank_account_number}\n"
+        print(f"\nBank account Number: {self._bank_account_number}\n"
               f"Bank name: {self._bank_name}\n"
               f"Bank bal: {self._bank_bal}")

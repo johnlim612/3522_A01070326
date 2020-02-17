@@ -1,5 +1,9 @@
 from userTypeEnum import UserType
 
+"""
+Handles functions for specific different user types
+"""
+
 
 class UserTypes:
     def __init__(self, user_type):
@@ -26,6 +30,7 @@ class UserTypes:
 
     def notify_user(self):
         warning_percentage = int(self._warning_limit * 100)
+
         if self._warned < 2:
             if self._user_type == 1:
                 print(f"You have exceeded {warning_percentage}% on this budget category.")

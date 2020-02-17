@@ -1,4 +1,4 @@
-""" budget"""
+""" Holds a the budget object for each user"""
 
 
 class Budget:
@@ -7,19 +7,11 @@ class Budget:
         self._budgets = budgets
         self._current_budgets = budgets
         self._warning_limit = warning_limit
-        print(f"{warning_limit} check1")
         self._lockout_limit = lockout_limit
         self._locked = {"games and entertainment": False,
                         "clothing and accessories": False,
                         "eating out": False,
                         "miscellaneous": False}
-
-    # def check_warning(self, budget_cat):
-    #     # percentage of budget used
-    #     used_percentage = (self._budgets[budget_cat] - self._current_budgets[budget_cat]) / self._budgets[budget_cat]
-    #     if used_percentage > self._warning_limit:
-    #         warning_percentage = int(self._warning_limit * 100)
-    #         print(f"warning you have exceeded {warning_percentage}% of te budget")
 
     def check_lockout(self, budget_cat):
         # percentage of budget used
@@ -55,7 +47,7 @@ class Budget:
     def check_warning(self, budget_cat):
         # percentage of budget used
         used_percentage = (self._budgets[budget_cat] - self._current_budgets[budget_cat]) / self._budgets[budget_cat]
-        print(self._warning_limit)
+
         if used_percentage > self._warning_limit:
             return True
         return False
@@ -66,7 +58,7 @@ class Budget:
         return False
 
     def view_budget(self):
-        for x in self._current_budgets:
-            print(x)
-            for y in self._current_budgets[x]:
-                print(y, ':', self._current_budgets[x][y])
+        print("\n")
+        for key, value in self._current_budgets.items():
+            print(key, ": $", value)
+        print("\n")
