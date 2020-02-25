@@ -4,6 +4,7 @@ that you won't find this in the workplace) BookAnalyzer class that needs
 to be profiled and optimized.
 
 OPTIMIZED: removed is_unique class and used "set" function to return list of unique words
+and made loop in read_data O(n) from O(n^2)
 """
 
 
@@ -48,8 +49,8 @@ class BookAnalyzer:
         temp_text = []
         for word in self.text:
             temp_word = word
-            for punctuation in self.COMMON_PUNCTUATION:
-                temp_word = temp_word.replace(punctuation, '')
+            if temp_word in self.COMMON_PUNCTUATION:
+                temp_word = ''
             temp_text.append(temp_word)
         self.text = temp_text
 
