@@ -72,9 +72,6 @@ class BookAnalyzer:
         :return: a list of all the unique words.
         """
         temp_text = self.text
-        # unique_words = set(temp_text)
-        # return unique_words
-
         unique_words = []
         while temp_text:
             word = temp_text.pop().lower()
