@@ -37,6 +37,7 @@ class Catalogue:
         generator = LibraryItemGenerator()
         new_item = generator.generate_item(call_number)
         found_item = self.retrieve_item_by_call_number(call_number)
+
         if found_item:
             print(f"Could not add item with call number "
                   f"{call_number}. It already exists. ")

@@ -20,7 +20,7 @@ class Book(Items):
         self._author = author
 
     def __str__(self):
-        return f"---- Book: {self.title()} ----\n" \
+        return f"---- Book: {self.title} ----\n" \
             f"Call Number: {self.call_number}\n" \
             f"Number of Copies: {self._num_copies}\n" \
             f"Author: {self._author}"

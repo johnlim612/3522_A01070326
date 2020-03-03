@@ -1,6 +1,9 @@
 from DVD import DVD
 from book import Book
 from journal import Journal
+from bookFactory import BookFactory
+from DVDFactory import DVDFactory
+from journalFactory import JournalFactory
 
 
 class LibraryItemGenerator:
@@ -20,22 +23,23 @@ class LibraryItemGenerator:
             string_input = input("Please enter your choice (1-4)")
             user_input = int(string_input)
             title = input("Enter title: ")
-            num_copies = int(input("Enter number of copies (positive number): "))
-            item_data = (call_num, title, num_copies)
+
+            wrong_input = True
+            while wrong_input:
+                try:
+                    num_copies = int(input("Enter number of copies (positive number): "))
+                    wrong_input = False
+                except ValueError:
+                    print("please enter a valid input")
 
             # creates the item object of input choice
             if user_input == 1:
-                author = input("Enter Author Name: ")
-                return Book(item_data[0], item_data[1], item_data[2], author)
+
+                return BookFactory().create_item(call_num, title, num_copies)
             if user_input == 2:
-                release_date = input("Enter release date (yyyy/mm/dd): ")
-                code = input("Enter region code: ")
-                return DVD(item_data[0], item_data[1], item_data[2], release_date, code)
+                return DVDFactory().create_item(call_num, title, num_copies)
             if user_input == 3:
-                names = input("Enter names")
-                issue_number = input("Please enter issue number")
-                publisher = input("Enter publisher")
-                return Journal(item_data[0], item_data[1], item_data[2], names, issue_number, publisher)
+                return JournalFactory().create_item(call_num, title, num_copies)
             # return to menu
             if user_input == 4:
                 pass

@@ -26,10 +26,10 @@ class Items(ABC):
         return self._num_copies
 
     # property for number of copies
-    num_copies = (get_num_copies())
+    num_copies = property(get_num_copies)
 
     # property for item title
-    title = (get_title())
+    title = property(get_title)
 
     @property
     def call_number(self):

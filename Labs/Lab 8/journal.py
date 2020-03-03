@@ -14,7 +14,7 @@ class Journal(Items):
         self._publisher = publisher
 
     def __str__(self):
-        return f"---- Journal: {self.title()} ----\n" \
+        return f"---- Journal: {self.title} ----\n" \
             f"Call Number: {self.call_number}\n" \
             f"Number of Copies: {self._num_copies}\n" \
             f"names: {self._names}\n" \

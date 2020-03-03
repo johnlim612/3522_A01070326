@@ -41,5 +41,3 @@ class Items(ABC):
         else:
             return False
 
-    def __str__(self):
-        pass
