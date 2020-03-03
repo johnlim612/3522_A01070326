@@ -113,7 +113,3 @@ class Catalogue:
             return True
         else:
             return False
-
-
-
-
