@@ -24,7 +24,7 @@ class Catalogue:
         """
         title_list = []
         for items in self._item_list:
-            title_list.append(items.get_title())
+            title_list.append(items.title())
         results = difflib.get_close_matches(title, title_list,
                                             cutoff=0.5)
         return results
@@ -34,13 +34,17 @@ class Catalogue:
         Add a brand new item to the library with a unique call number.
         """
         call_number = input("Enter call number")
-        generator = LibraryItemGenerator()
-        new_item = generator.generate_item(call_number)
         found_item = self.retrieve_item_by_call_number(call_number)
+
         if found_item:
             print(f"Could not add item with call number "
                   f"{call_number}. It already exists. ")
         else:
+            # item generator
+            generator = LibraryItemGenerator()
+            new_item = generator.generate_item(call_number)
+
+            # adds new item
             self._item_list.append(new_item)
             print("item added successfully! item details:")
             print(new_item)
@@ -52,9 +56,10 @@ class Catalogue:
         :precondition call_number: a unique identifier
         """
         found_item = self.retrieve_item_by_call_number(call_number)
+
         if found_item:
             self._item_list.remove(found_item)
-            print(f"Successfully removed {found_item.get_title()} with "
+            print(f"Successfully removed {found_item.title()} with "
                   f"call number: {call_number}")
         else:
             print(f"item with call number: {call_number} not found.")
